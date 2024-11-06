@@ -1,30 +1,22 @@
-import type { Config } from 'tailwindcss'
-import typography from '@tailwindcss/typography'
+import type { Config } from "tailwindcss";
 
 export default {
-  content: ['./app/**/*.{js,jsx,ts,tsx}'],
-  darkMode: 'class',
+  content: ["./app/**/{**,.client,.server}/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
-      colors: {
-        primary: 'var(--color-primary)',
-        secondary: 'var(--color-secondary)',
-      },
-      typography: {
-        DEFAULT: {
-          css: {
-            'code::before': { content: '""' },
-            'code::after': { content: '""' },
-            code: {
-              backgroundColor: 'var(--color-code-bg)',
-              padding: '0.25rem 0.375rem',
-              borderRadius: '0.25rem',
-              fontWeight: '400',
-            },
-          },
-        },
+      fontFamily: {
+        sans: [
+          '"Inter"',
+          "ui-sans-serif",
+          "system-ui",
+          "sans-serif",
+          '"Apple Color Emoji"',
+          '"Segoe UI Emoji"',
+          '"Segoe UI Symbol"',
+          '"Noto Color Emoji"',
+        ],
       },
     },
   },
-  plugins: [typography],
-} satisfies Config
+  plugins: [],
+} satisfies Config;

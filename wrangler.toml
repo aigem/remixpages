@@ -1,6 +1,6 @@
 #:schema node_modules/wrangler/config-schema.json
 name = "remixpages"
-compatibility_date = "2024-10-22"
+compatibility_date = "2023-05-18"
 main = "./build/worker/index.js"
 assets = { directory = "./build/client" }
 
@@ -9,6 +9,3 @@ assets = { directory = "./build/client" }
 # Configuration: https://developers.cloudflare.com/workers/observability/logs/workers-logs/#enable-workers-logs
 [observability]
 enabled = true
-
-[site]
-bucket = "./public"
