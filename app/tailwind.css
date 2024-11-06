@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #3b82f6;
+  --color-secondary: #64748b;
+  --color-code-bg: #f1f5f9;
+}
+
+.dark {
+  --color-primary: #60a5fa;
+  --color-secondary: #94a3b8;
+  --color-code-bg: #1e293b;
+}
+
+.prose {
+  max-width: 65ch;
+}
+
+.prose a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.prose a:hover {
+  text-decoration: underline;
+}
