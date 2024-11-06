@@ -11,7 +11,7 @@ declare module "@remix-run/cloudflare" {
   }
 }
 
-export default defineConfig({
+export default defineConfig(({ mode }) => ({
   plugins: [
     remixCloudflareDevProxy(),
     remix({
@@ -19,10 +19,14 @@ export default defineConfig({
         v3_fetcherPersist: true,
         v3_relativeSplatPath: true,
         v3_throwAbortReason: true,
-        v3_singleFetch: true,
         v3_lazyRouteDiscovery: true,
       },
+      serverModuleFormat: "esm",
+      ignoredRouteFiles: ["**/.*"],
     }),
     tsconfigPaths(),
   ],
-});
+  define: {
+    "process.env.NODE_ENV": JSON.stringify(mode),
+  },
+}));
